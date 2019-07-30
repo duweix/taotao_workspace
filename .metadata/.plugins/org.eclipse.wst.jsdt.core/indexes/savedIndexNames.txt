@@ -1,4 +1,0 @@
-INDEX VERSION 1.4+E:\eclipse\pleiades-2019-03-java-win-64bit_20190324\pleiades\taotao_workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2426332694.index
-986312471.index
-3609442454.index
