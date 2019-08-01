@@ -1,6 +1,6 @@
 package com.taotao.pojo;
 
-public class TbItemParam {
+public class TbItemParam extends BasePojo {
     private Integer id;
 
     public Integer getId() {

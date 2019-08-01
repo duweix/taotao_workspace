@@ -23,6 +23,7 @@
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true" />
+            <property name="rootClass" value="com.taotao.pojo.BasePojo" />
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
         <sqlMapGenerator targetPackage="com.taotao.mapper" targetProject=".\src">

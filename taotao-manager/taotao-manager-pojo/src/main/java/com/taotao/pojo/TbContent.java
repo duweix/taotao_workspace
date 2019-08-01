@@ -1,6 +1,6 @@
 package com.taotao.pojo;
 
-public class TbContent {
+public class TbContent extends BasePojo {
     private Integer id;
 
     public Integer getId() {

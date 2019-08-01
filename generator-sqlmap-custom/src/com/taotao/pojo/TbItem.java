@@ -1,6 +1,6 @@
 package com.taotao.pojo;
 
-public class TbItem {
+public class TbItem extends BasePojo {
     private Long id;
 
     private String title;

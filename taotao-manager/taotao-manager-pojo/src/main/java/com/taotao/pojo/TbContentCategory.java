@@ -1,6 +1,6 @@
 package com.taotao.pojo;
 
-public class TbContentCategory {
+public class TbContentCategory extends BasePojo {
     private Integer id;
 
     public Integer getId() {
