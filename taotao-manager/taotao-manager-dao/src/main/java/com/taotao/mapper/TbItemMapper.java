@@ -10,7 +10,7 @@ public interface TbItemMapper {
 
     int deleteByExample(TbItemExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(TbItem record);
 
@@ -18,7 +18,13 @@ public interface TbItemMapper {
 
     List<TbItem> selectByExample(TbItemExample example);
 
+    TbItem selectByPrimaryKey(Long id);
+
     int updateByExampleSelective(@Param("record") TbItem record, @Param("example") TbItemExample example);
 
     int updateByExample(@Param("record") TbItem record, @Param("example") TbItemExample example);
+
+    int updateByPrimaryKeySelective(TbItem record);
+
+    int updateByPrimaryKey(TbItem record);
 }
