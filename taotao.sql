@@ -67,10 +67,22 @@ DROP TABLE IF EXISTS `tb_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_item` (
-  `id` int(11) NOT NULL,
-  `title` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` bigint(20) NOT NULL COMMENT '商品id，同时也是商品编号',
+  `title` varchar(100) NOT NULL COMMENT '商品标题',
+  `sell_point` varchar(500) DEFAULT NULL COMMENT '商品卖点',
+  `price` bigint(20) NOT NULL COMMENT '商品价格，单位为：分',
+  `num` int(10) NOT NULL COMMENT '库存数量',
+  `barcode` varchar(30) DEFAULT NULL COMMENT '商品条形码',
+  `image` varchar(500) DEFAULT NULL COMMENT '商品图片',
+  `cid` bigint(10) NOT NULL COMMENT '所属类目，叶子类目',
+  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '商品状态，1-正常，2-下架，3-删除',
+  `created` datetime NOT NULL COMMENT '创建时间',
+  `updated` datetime NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `cid` (`cid`),
+  KEY `status` (`status`),
+  KEY `updated` (`updated`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +91,7 @@ CREATE TABLE `tb_item` (
 
 LOCK TABLES `tb_item` WRITE;
 /*!40000 ALTER TABLE `tb_item` DISABLE KEYS */;
-INSERT INTO `tb_item` VALUES (536563,'new2 - 阿尔卡特（OT-927）炭黑 联通3G手机 双卡双待');
+INSERT INTO `tb_item` VALUES (536563,'new2 - 阿尔卡特（OT-927）炭黑 联通3G手机 双卡双待',NULL,29900,99999,NULL,NULL,560,1,'2015-03-08 21:33:18','2015-04-11 20:38:38');
 /*!40000 ALTER TABLE `tb_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-01 17:11:17
+-- Dump completed on 2019-08-02 20:18:09
