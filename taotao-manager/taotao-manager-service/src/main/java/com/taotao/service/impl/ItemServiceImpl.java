@@ -12,13 +12,18 @@ import com.taotao.service.ItemService;
 @Service
 public class ItemServiceImpl implements ItemService, Serializable {
 
-    @Autowired
-    private TbItemMapper tbItemMapper;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Autowired
+	private TbItemMapper tbItemMapper;
 
-    @Override
-    public TbItem getItemById(long itemId) {
-        TbItem item = tbItemMapper.selectByPrimaryKey(itemId);
-        return item;
-    }
+	@Override
+	public TbItem getItemById(long itemId) {
+		TbItem item = tbItemMapper.selectByPrimaryKey(itemId);
+		return item;
+	}
 
 }
